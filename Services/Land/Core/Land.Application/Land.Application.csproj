@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Features\Demand\**" />
+		<Compile Remove="Features\LandMasterInfo\Queries\GetAllLandSummaryById\**" />
+		<Compile Remove="Features\LandMasterInfo\Queries\GetLandInfoGlobalSearch\**" />
+		<Compile Remove="Features\TempleteInfo\**" />
+		<EmbeddedResource Remove="Features\Demand\**" />
+		<EmbeddedResource Remove="Features\LandMasterInfo\Queries\GetAllLandSummaryById\**" />
+		<EmbeddedResource Remove="Features\LandMasterInfo\Queries\GetLandInfoGlobalSearch\**" />
+		<EmbeddedResource Remove="Features\TempleteInfo\**" />
+		<None Remove="Features\Demand\**" />
+		<None Remove="Features\LandMasterInfo\Queries\GetAllLandSummaryById\**" />
+		<None Remove="Features\LandMasterInfo\Queries\GetLandInfoGlobalSearch\**" />
+		<None Remove="Features\TempleteInfo\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="10.1.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+		<PackageReference Include="Dapper" Version="2.0.143" />
+		<PackageReference Include="FluentValidation" Version="10.3.6" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.6" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.3">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+		<PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.14" />
+		<PackageReference Include="NETCore.MailKit" Version="2.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Features\AlmirahNo\Commands\" />
+		<Folder Include="Features\CmnBanglaYearInfo\Commands\" />
+		<Folder Include="Features\FileNo\Commands\" />
+		<Folder Include="Features\HrmsFeatures\CommonCompanyInfo\Commands\" />
+		<Folder Include="Features\LandOwnerTypeInfo\Commands\" />
+		<Folder Include="Features\RackNo\Commands\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Land.Domain\Land.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Reports\DataSet\StyleStatusDataSet.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>StyleStatusDataSet.xsd</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Reports\DataSet\StyleStatusDataSet.xsd">
+			<Generator>MSDataSetGenerator</Generator>
+			<LastGenOutput>StyleStatusDataSet.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+</Project>
